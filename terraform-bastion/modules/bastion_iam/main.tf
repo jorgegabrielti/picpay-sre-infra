@@ -19,16 +19,20 @@ resource "aws_iam_role" "bastion_role" {
   })
 }
 
-
-resource "aws_iam_role_policy_attachment" "ssm_managed_instance_core" {
+resource "aws_iam_role_policy_attachment" "admin_access" {
   role       = aws_iam_role.bastion_role.name
-  policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+  policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
 
-resource "aws_iam_role_policy_attachment" "eks_policy_attachment" {
-  role       = aws_iam_role.bastion_role.name
-  policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy" 
-}
+#resource "aws_iam_role_policy_attachment" "ssm_managed_instance_core" {
+#  role       = aws_iam_role.bastion_role.name
+#  policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+#}
+
+#resource "aws_iam_role_policy_attachment" "eks_policy_attachment" {
+#  role       = aws_iam_role.bastion_role.name
+#  policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy" 
+#}
 
 resource "aws_iam_instance_profile" "bastion_profile" {
   name = "${var.cluster_name}-bastion-profile"
