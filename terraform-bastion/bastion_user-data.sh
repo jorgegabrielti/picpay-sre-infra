@@ -73,6 +73,6 @@ istioctl x precheck
 # Install eks-node-viewer
 echo "Installing eks-node-viewer..."
 
-go install github.com/awslabs/eks-node-viewer/cmd/eks-node-viewer@latest 
-sudo mv -v ~/go/bin/eks-node-viewer /usr/local/bin 
+sudo wget https://github.com/awslabs/eks-node-viewer/releases/download/v0.7.4/eks-node-viewer_Linux_x86_64 -O /usr/bin/eks-node-viewer
+sudo chmod +x /usr/bin/eks-node-viewer
 eks-node-viewer --version || true 

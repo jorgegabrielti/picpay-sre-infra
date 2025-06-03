@@ -15,6 +15,7 @@ resource "aws_instance" "bastion" {
   associate_public_ip_address = true                      # IP público auto-atribuído
   key_name                    = aws_key_pair.bastion.key_name
   vpc_security_group_ids      = [var.bastion_sg_id]
+  iam_instance_profile        = var.iam_instance_profile_name
 
   # Adiciona o user-data para a instalação das ferramentas
   user_data = file("${path.module}/../../bastion_user-data.sh") # Caminho ajustado para o arquivo no diretório raiz

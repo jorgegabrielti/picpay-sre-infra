@@ -43,3 +43,8 @@ variable "local_public_key_path" {
   description = "Caminho absoluto para o arquivo da chave pública SSH local."
   type        = string
 }
+
+variable "iam_instance_profile_name" {
+  description = "O nome do IAM Instance Profile a ser anexado à instância EC2."
+  type        = string
+}

@@ -45,6 +45,12 @@ variable "my_allowed_ssh_ip" {
   # Este valor DEVE ser fornecido pelo usuário no arquivo terraform.tfvars
 }
 
+variable "iam_instance_profile_name" {
+  description = "The name of the IAM instance profile to attach to the bastion host"
+  type        = string
+}
+
+
 locals {
   common_tags = {
     Project     = var.cluster_name
