@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Referência:
+# Icones: 
+# - https://emojipedia.org/
+# - https://getemoji.com/
+
 # Verifica dependência do fzf
 if ! command -v fzf &> /dev/null; then
   echo "❌ O utilitário 'fzf' não está instalado. Instale com: git clone https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install"
