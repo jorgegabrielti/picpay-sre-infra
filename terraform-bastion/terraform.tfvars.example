@@ -1,0 +1,8 @@
+existing_vpc_id          = "vpc-xxxxxxxxxxxxxxxxx" 
+existing_public_subnet_ids = ["subnet-xxxxxxxxxxxxxxxxx", "subnet-yyyyyyyyyyyyyyyyy", "subnet-zzzzzzzzzzzzzzzzz"] 
+aws_region                     = "us-east-1"
+cluster_name                   = "picpay-sre-senior-cards"
+bastion_instance_type          = "t2.micro"
+bastion_ami_id_value           = "ami-0953476d60561c955"
+bastion_ssh_key_name_value     = "eks-bastion-public"
+my_allowed_ssh_ip = "YOUR_PUBLIC_IP/32" 
