@@ -13,6 +13,14 @@ resource "aws_security_group" "bastion_sg" {
     ipv6_cidr_blocks = [var.allowed_ssh_ip]
   }
 
+  ingress {
+    description     = "Allow internal traffic from self SG"
+    from_port       = 0
+    to_port         = 65535
+    protocol        = "tcp"
+    security_groups = [aws_security_group.bastion_sg.id]
+  }
+
   # Regra de saída (permite todo o tráfego de saída)
   egress {
     from_port   = 0
