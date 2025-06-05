@@ -8,7 +8,12 @@
 # Verifica dependência do fzf
 if ! command -v fzf &> /dev/null; then
   echo -e "\u274C O utilitário 'fzf' não está instalado. Instale com: git clone https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install"
-  exit 1
+  git clone https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install && source ~/.bashrc
+fi
+
+if ! command -v file &> /dev/null; then
+  echo -e "\u274C O utilitário 'file' não está instalado. Instale com: sudo yum install file"
+  sudo yum install -y file
 fi
 
 # Obtém IP público do ambiente atual
